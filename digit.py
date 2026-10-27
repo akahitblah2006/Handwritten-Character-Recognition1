@@ -34,7 +34,7 @@ plt.title(f"Test Image Prediction: {prediction}")
 plt.show()
 
 # Step 6: Load your handwritten image
-file_path = r"C:\Users\Akshit\OneDrive\Desktop\seven.png"
+file_path = "seven.png"
 
 try:
     # Open image in grayscale
