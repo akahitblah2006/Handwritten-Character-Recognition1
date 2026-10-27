@@ -1,0 +1,24 @@
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+import matplotlib.pyplot as plt
+
+digits = datasets.load_digits()
+
+X = digits.data
+y = digits.target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = KNeighborsClassifier()
+model.fit(X_train, y_train)
+
+accuracy = model.score(X_test, y_test)
+print("Accuracy:", accuracy)
+
+prediction = model.predict([X_test[10]])
+print("Predicted digit:", prediction[0])
+
+plt.imshow(X_test[10].reshape(8, 8), cmap='gray')
+plt.title("Test Image")
+plt.show()
